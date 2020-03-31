@@ -1,12 +1,14 @@
 # E-Commerce Project
 
-Given a dataset of items, you must create an e-commerce app that will showcase all of the provided items in an _elegant_ way. Users should be able to add items to a cart and purchase the items.
+Given a dataset of items, you must create an e-commerce app that will showcase all of the provided items in an _elegant_ way.
+
+TODO: more details.
 
 ## Goal
 
 ## Data details
 
-There are 349 products in the `products.json` file. The data is mostly clean, but there could be some irregularities, i.e. empty values, values that we really don't need. _This is common in large databases, and something that we have to deal with._
+There are 349 items in the `_data/items.json` file. The data is mostly clean, but there could be some irregularities, i.e. empty values, values that we really don't need. _This is common in large databases, and something that we have to deal with._
 
 ### Item Object
 
