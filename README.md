@@ -19,7 +19,7 @@ There are 349 items in the `_data/items.json` file. The data is mostly clean, bu
     "body_location": "Wrist",
     "category": "Fitness",
     "id": 6543,
-    "imageSrc": "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBwgHBgkIBwgKCgkLDRYPDQwMDRsUFR...<REST_OF_IMAGE_ENCODING>",
+    "imageSrc": "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBwgHB...<REST_OF_IMAGE_ENCODING>",
     "numInStock": 9,
     "companyId": 19962
   },
