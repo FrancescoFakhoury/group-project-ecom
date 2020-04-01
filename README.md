@@ -1,4 +1,4 @@
-# E-Commerce Project
+# Wearables E-Commerce Project
 
 Given a dataset of items, you must create an e-commerce app that will showcase all of the provided items in an _elegant_ way.
 
