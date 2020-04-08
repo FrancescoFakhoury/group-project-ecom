@@ -43,6 +43,6 @@ The most important aspect of this project is the ability to work in a team. No m
 
 - **review** each other's code
 - **ask** questions when you don't understand
-- **comment** your code extensively. Always go for clarity over brevity.
+- **comment** your code extensively. _Always go for clarity over brevity._
 
 ## GitHub
