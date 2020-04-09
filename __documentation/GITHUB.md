@@ -6,6 +6,8 @@
 
 ⚠️ Most important thing is that the rest of the team that work from _that_ repository and not this one.
 
+![gitflow](../server/assets/git_remote_flow.png)
+
 ### Individual worflow
 
 1. When you start working on a task, ALWAYS create a new branch and name it according to the task.

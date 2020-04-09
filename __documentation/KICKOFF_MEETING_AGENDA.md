@@ -5,6 +5,7 @@
     - These meetings, or _stand-ups_, should occur at least once a day. We do recommend twice a day, given the tight deadline.
     - They can last anywhere from 15 minutes to 1 hour. Expect meetings to be longer at the beginning of the project as everyone is still trying to understand what it is they have to do.
 - **Understand**
+  - Read the [PROJECT guidelines](PROJECT.md)
   - what are we building?
   - what are the requirements?
   - Is the project clear?
