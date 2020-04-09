@@ -27,11 +27,13 @@ This person should be prevent for some of your team meetings but not all. PMs ar
 1. You will break into 3 groups (with your assigned PM.)
 2. Your PM will answer any initial questions, and give you more information, as required.
 3. Break into a separate meeting with just your team. \_Your PM will bounce from team to team to make sure you're on track.
-4. Time to use the [Kickoff Meeting Agenda](KICKOFF_MEETING_AGENDA.md)
+4. Time to use the [Kickoff Meeting Agenda](__documentation/KICKOFF_MEETING_AGENDA.md)
 
 ### First team meeting
 
-Your first team meeting should start with the [Kickoff Meeting Agenda](KICKOFF_MEETING_AGENDa.md).
+It could also be a good/fun idea to give yourselves an original team name. :)
+
+Your first team meeting should start with the [Kickoff Meeting Agenda](__documentation/KICKOFF_MEETING_AGENDa.md).
 
 [Successful Software Project Delivery in 10 Steps](https://www.appnovation.com/blog/successful-software-project-delivery-10-steps).
 
@@ -46,3 +48,5 @@ The most important aspect of this project is the ability to work in a team. No m
 - **comment** your code extensively. _Always go for clarity over brevity._
 
 ## GitHub
+
+see the [GITHUB Document](__documentation/GITHUB.md)
