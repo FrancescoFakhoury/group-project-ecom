@@ -1,6 +1,6 @@
 # GitHub
 
-1. Decide which team member will have the `master` repository for your project. \_You'll be
+1. Decide which team member will have the `master` repository for your project.
 2. That person will create a new repository, or use this one.
 3. The rest of the team will fork that repository.
 
@@ -29,7 +29,7 @@ The rest of the team can now pull your changes into their repos.
 2. `git pull upstream master`
 3. `git stash apply`
 
-If you happen to work in some of the same files as a teammamte, you will probably have conflicts. Use the VS Code UI to navigate these and resolve them.
+If you happen to work in some of the same files as a teammate, you will probably have conflicts. Use the VS Code UI to navigate these and resolve them. _If you get into weird state and start to panic, see someone, say something._
 
 ### github commands
 
