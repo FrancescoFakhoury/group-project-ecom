@@ -2,14 +2,14 @@
 
 - **Housekeeping**
   - Begin by setting times for meetings over the next week.
-    - These meetings, or _stand-ups_, should occur at least once a day. We do recommend twice a day, given the tight deadline.
+    - These meetings, or _stand-ups_ as they are commonly called, should occur at least once a day. We do recommend twice a day, given the tight deadline.
     - They can last anywhere from 15 minutes to 1 hour. Expect meetings to be longer at the beginning of the project as everyone is still trying to understand what it is they have to do.
 - **Understand**
   - Read the [PROJECT guidelines](PROJECT.md)
   - what are we building?
   - what are the requirements?
   - Is the project clear?
-  - Do we have questions for the stakeholders? _If so, book some time with a TC, or your instructor._
+  - Do we have questions for the stakeholders? _If so, book some time with a TC/PM, or your instructor._
 - **Brainstorming**
   - Take a look at the data
     - What do we have to show?

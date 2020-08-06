@@ -1,10 +1,8 @@
 # GitHub
 
-1. Decide which team member will have the `master` repository for your project.
-2. That person will create a new repository, or use this one.
-3. The rest of the team will fork that repository.
-
-⚠️ Most important thing is that the rest of the team that work from _that_ repository and not this one.
+1. Decide which team member will have the `master` repository for your project, and will be the _team lead_.
+2. That person's fork of this repository will be the one that everyone else in the team opens PRs on (not the `cb-i-4` repo). _Your PM will get you set up with this and excplain any questions you may have._
+3. The _team lead_ will merge the PRs into the their repo.
 
 ![gitflow](../server/assets/git_remote_flow.png)
 

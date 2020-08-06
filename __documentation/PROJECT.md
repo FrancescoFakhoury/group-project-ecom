@@ -10,14 +10,14 @@ Users should be able to
 
 - view all items in the _database_.
 - purchase items that are in stock.
-- view a cart of their items.
+- view a cart containing the items they intend to purchase.
 - edit cart before completing the purchase.
 
 ### Backend Requirements
 
 The Node server should
 
-- be RESTful (use the right method for the right job)
+- be RESTful (use the right `method` for the right job)
 - provide the FE with the required data in a succinct and organized way.
 - update the inventory as users make purchases.
 

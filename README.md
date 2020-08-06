@@ -22,13 +22,13 @@ There probably shouldn't be any coding until very near the end of the first day.
 
 Each team has been assigned a product manager. This person is in charge of answering questions, guiding you and basically preventing everything from falling apart!
 
-This person should be prevent for some of your team meetings but not all. PMs are super busy people and have multiple projects, people to manage.
+This person should be present for some of your team meetings, but not all. PMs are super busy people and have multiple projects, people to manage. 😉
 
 ## Planning
 
 1. You will break into 3 groups (with your assigned PM.)
 2. Your PM will answer any initial questions, and give you more information, as required.
-3. Break into a separate meeting with just your team. \_Your PM will bounce from team to team to make sure you're on track.
+3. Breakout into a separate meeting with just your team. _Your PM will bounce from team to team to make sure you're on track._
 4. Time to use the [Kickoff Meeting Agenda](__documentation/KICKOFF_MEETING_AGENDA.md)
 
 ### First team meeting
@@ -43,7 +43,7 @@ Your first team meeting should start with the [Kickoff Meeting Agenda](__documen
 
 ## Teamwork
 
-The most important aspect of this project is the ability to work in a team. No matter your contribution to the project, yuo should understand the _full_ codebase. This will require that you
+The most important aspect of this project is the ability to work in a team. No matter your contribution to the project, you should understand the **FULL** codebase. This will require that you
 
 - **review** each other's code
 - **ask** questions when you don't understand
