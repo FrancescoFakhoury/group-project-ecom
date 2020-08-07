@@ -27,3 +27,5 @@
       - Who is most excited about a particular task?
       - Do we need a manager for a particular group of tasks? i.e. BE, FE.
       - Who will coordinate between the BE and FE.
+- **TEAM Name**
+  - Once you've had a chance to discuss, it might be fun to come up with a team name that is better than "Team #".

@@ -9,7 +9,7 @@ Each team should have
 
 _example_
 
-## Team 1
+## Team 0
 
 - Spongebob Squarepants
 - Homer Simpson
