@@ -62,4 +62,4 @@ You will find 349 items in the `_data/items.json` file. The data is mostly clean
 
 ## 🤣 Don't be this guy...
 
-<img src='./server/assets/comic-strip.png' style='width: 100%;'/>
+<img src='../server/assets/comic-strip.png' style='width: 100%;'/>

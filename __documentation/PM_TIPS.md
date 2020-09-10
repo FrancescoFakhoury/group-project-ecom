@@ -2,7 +2,7 @@
 
 1. Do NOT work on the same files at the same time. If you have no other choice, be very careful not to be working on the same parts of that file because it can lead to merge issues and headaches.
 2. Everybody should be relatively up to the date with the latest version of the project. A push/pull from everyone every 2hours is usually a good place to start.
-3. Be careful when modifying somebody elses code. You should
+3. Be careful when modifying somebody elses code.
 4. I highly recommend you use a Trello board to keep track of the most important tracks and to make sure everybody is on the same page. [https://trello.com/](https://trello.com/)
 
 ![trello.png](../server/assets/trello.png)
