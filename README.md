@@ -8,6 +8,12 @@ The stack is React.Js, Redux, Node.Js, and styled-components.
 
 Your node server should be RESTful and follow REST principles, at least to the extent we learned during the bootcamp.
 
+---
+
+**✋ You CANNOT use any external UI libraries, including, but not limited to, Material UI, Bootstrap.**
+
+---
+
 ## Getting Started
 
 <img src="./server/assets/software-dev-path.jpg" style="width: 100%;" />
