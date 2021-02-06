@@ -8,3 +8,8 @@ _example_
 - Zayd
 - Aya
 - Chris
+
+## Team 2 
+- Vishal
+- Joni 
+- Winnie
