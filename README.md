@@ -4,7 +4,7 @@
 
 You will make use of _everything_ that you have learned thus far in the bootcamp to build an e-commerce app that will showcase all of the provided _wearables_ items.
 
-The stack is React.Js, Redux, Node.Js, and styled-components.
+The stack is React.Js, Node.Js, and styled-components.
 
 Your node server should be RESTful and follow REST principles, at least to the extent we learned during the bootcamp.
 
