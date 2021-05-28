@@ -24,17 +24,39 @@ const handleInventory = (req, res) => {
 
 const handleCart = (req, res) => {
   const { _id } = req.body;
-  const cart = [];
   const foundItem = items.filter((item) => {
     return item._id === _id;
   });
   if (foundItem[0]._id === _id) {
-    console.log(foundItem);
-    cart.push(foundItem[0]);
-    res.status(200).json({ status: 200, data: cart });
+    res.status(200).json({ status: 200, message: "success" });
   } else {
-    res.status(200).json({ status: 404, message: "item not found" });
+    res.status(200).json({ status: 404, message: "item not found"[0] });
   }
 };
 
-module.exports = { handleItems, handleInventory, handleCart };
+const deleteItemFromCart = (req, res) => {
+  const itemId = req.params;
+  let cart = [];
+
+  let specificItem = items.find((e) => {
+    return e._id === itemId;
+  });
+  console.log("specific", specificItem);
+  if (specificItem) {
+    items.filter((item) => {
+      if (item._id !== itemId) {
+        cart.push(item);
+      }
+    });
+    res.json(cart);
+  } else {
+    res.json({ status: 404, message: "error" });
+  }
+};
+
+module.exports = {
+  handleItems,
+  handleInventory,
+  handleCart,
+  deleteItemFromCart,
+};

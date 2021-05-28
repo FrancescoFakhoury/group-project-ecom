@@ -7,6 +7,7 @@ const {
   handleItems,
   handleInventory,
   handleCart,
+  deleteItemFromCart,
 } = require("./handlers/itemHandler");
 const PORT = 4000;
 
@@ -33,4 +34,5 @@ express()
   .get("/products/all", handleItems)
   .patch("/products/update", handleInventory)
   .put("/cart/add/", handleCart)
+  .delete("/cart/delete/:itemId", deleteItemFromCart)
   .listen(PORT, () => console.info(`Listening on port ${PORT}`));
