@@ -25,7 +25,6 @@ express()
   .use("/", express.static(__dirname + "/"))
 
   // REST endpoints?
-  .get("/bacon", (req, res) => res.status(200).json("🥓"))
   .get("/products/all", handleItems)
   .patch("/products/update", handleInventory)
   .listen(PORT, () => console.info(`Listening on port ${PORT}`));
