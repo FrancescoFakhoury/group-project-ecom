@@ -5,11 +5,13 @@ import Header from "./Header";
 import Cart from "./Cart";
 import Footer from "./Footer";
 import Homepage from "./Homepage";
+import GlobalStyles from "./GlobalStyles";
 
 function App() {
 
   return (
   <BrowserRouter>
+    <GlobalStyles />
     <Header />
     <Switch>
       <Route to="/" exact>
@@ -23,5 +25,7 @@ function App() {
   </BrowserRouter>
   );
 }
+
+
 
 export default App;
