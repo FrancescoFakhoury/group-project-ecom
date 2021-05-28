@@ -14,10 +14,10 @@ function App() {
     <GlobalStyles />
     <Header />
     <Switch>
-      <Route to="/" exact>
+      <Route path="/" exact>
         <Homepage />
       </Route>
-      <Route to="/cart">
+      <Route path="/cart">
         <Cart />
       </Route>
     </Switch>
