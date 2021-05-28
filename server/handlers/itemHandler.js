@@ -5,6 +5,7 @@ const handleItems = (req, res) => {
   res.status(200).json({ status: 200, data: items });
 };
 //
+
 //updating inventory when making a purchase
 const handleInventory = (req, res) => {
   const { _id, numInStock } = req.body;
@@ -21,7 +22,9 @@ const handleInventory = (req, res) => {
     res.status(200).json({ status: 404, message: "item not found"[0] });
   }
 };
-
+//
+//
+//
 const handleCart = (req, res) => {
   const { _id } = req.body;
   const foundItem = items.filter((item) => {
@@ -34,6 +37,7 @@ const handleCart = (req, res) => {
   }
 };
 
+//deleteItemFromCart doesn't work yet
 const deleteItemFromCart = (req, res) => {
   const itemId = req.params;
   let cart = [];

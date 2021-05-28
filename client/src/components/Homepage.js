@@ -1,7 +1,33 @@
 import React, { useEffect, useState } from "react";
 import styled from "styled-components";
-const Homepage = () => {
-  const [items, setItems] = useState([]);
+//importing props to Homepage.js from App.js
+const Homepage = ({
+  //CartItems is final product state that holds products that the user adds to cart
+  cartItems,
+  setCartItems,
+  //items is the state to hold all products from the fetch endpoint
+  items,
+  setItems,
+}) => {
+  //
+  //handleClick function called onClick of add item to cart
+  //
+  //item placeholder in argument is so we can pass the particular item from our items.map
+  //
+  //and then append it to our cartItems array VIA state
+  //
+  const handleClick = (item) => {
+    //copied this function from react website,
+    //not 100% on how it works but other than the slice it's just state setting
+    //
+    //https://dev.to/andyrewlee/cheat-sheet-for-updating-objects-and-arrays-in-react-state-48np
+    //
+    const newList = cartItems.slice();
+    newList.push(item);
+    setCartItems(newList);
+    localStorage.setItem("cartItems", JSON.stringify(cartItems));
+  };
+
   useEffect(() => {
     fetch("/products/all").then((response) =>
       response.json().then((json) => {
@@ -10,6 +36,7 @@ const Homepage = () => {
       })
     );
   }, []);
+  console.log(cartItems);
   return (
     <Wrapper>
       <Title>Items for Sale</Title>
@@ -21,7 +48,8 @@ const Homepage = () => {
               <ItemName>{item.name}</ItemName>
               <ItemPrice>{item.price}</ItemPrice>
               {item.numInStock > 0 ? (
-                <StyledButton>Add to Cart</StyledButton>
+                <StyledButton onClick={() => {
+                  handleClick(item)>Add to Cart</StyledButton>
               ) : (
                 <StyledButton disabled>Add to Cart</StyledButton>
               )}
