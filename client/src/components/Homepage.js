@@ -20,7 +20,7 @@ const Homepage = () => {
               <ItemName>{item.name}</ItemName>
               <div>{item.price}</div>
               <img src={item.imageSrc} />
-              <button>Add to Cart</button>
+              {item.numInStock > 0 ? <button>Add to Cart</button> : <button disabled>Add to Cart</button>}
             </ProductWrap2>
           );
         })}
