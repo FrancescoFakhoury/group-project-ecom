@@ -39,22 +39,20 @@ const Homepage = ({
   console.log(cartItems);
   return (
     <Wrapper>
-      <h2>All Products</h2>
+      <Title>Items for Sale</Title>
       <ProductWrap>
         {items.map((item) => {
           return (
-            <ProductWrap2 key={item._id}>
-              <ItemName>{item.name}</ItemName>
-              <div>{item.price}</div>
+            <ProductWrap2>
               <img src={item.imageSrc} />
-              <button
-                onClick={() => {
-                  handleClick(item);
-                  //setting the onClick
-                }}
-              >
-                Add to Cart
-              </button>
+              <ItemName>{item.name}</ItemName>
+              <ItemPrice>{item.price}</ItemPrice>
+              {item.numInStock > 0 ? (
+                <StyledButton onClick={() => {
+                  handleClick(item)>Add to Cart</StyledButton>
+              ) : (
+                <StyledButton disabled>Add to Cart</StyledButton>
+              )}
             </ProductWrap2>
           );
         })}
@@ -63,9 +61,33 @@ const Homepage = ({
   );
 };
 
-const Wrapper = styled.div``;
+const Wrapper = styled.div`
+  margin-top: 20px;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+`;
+
+const Title = styled.p`
+  color: black;
+  opacity: 0.6;
+  font-size: 40px;
+  display: flex;
+  justify-content: center;
+`;
+
 const ItemName = styled.div`
-  max-width: 175px;
+  padding-top: 20px;
+  max-width: 250px;
+  font-size: 20px;
+  font-family: var(--font-family);
+`;
+
+const ItemPrice = styled.p`
+  font-size: 20px;
+  font-weight: bold;
+  font-family: var(--font-family);
 `;
 const ProductWrap = styled.div`
   display: grid;
@@ -75,8 +97,28 @@ const ProductWrap = styled.div`
   padding: 25px;
 `;
 
+const StyledButton = styled.button`
+  font-size: 20px;
+  padding: 10px;
+  border-radius: 4px;
+  border: solid 1px;
+  background-image: linear-gradient(to right, purple, turquoise);
+  color: #fff;
+
+  &:hover {
+    cursor: pointer;
+  }
+`;
+
 const ProductWrap2 = styled.div`
   margin: 20px 0;
-  border: 2px solid black;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  box-shadow: 20px 20px 20px -20px;
+  border: solid grey 1px;
+  padding: 20px;
 `;
 export default Homepage;
