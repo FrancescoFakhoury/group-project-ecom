@@ -49,7 +49,7 @@ const Homepage = ({
               <ItemPrice>{item.price}</ItemPrice>
               {item.numInStock > 0 ? (
                 <StyledButton onClick={() => {
-                  handleClick(item)>Add to Cart</StyledButton>
+                  handleClick(item)}}>Add to Cart</StyledButton>
               ) : (
                 <StyledButton disabled>Add to Cart</StyledButton>
               )}
