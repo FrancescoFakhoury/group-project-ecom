@@ -3,7 +3,7 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 const morgan = require("morgan");
-const { handleItems } = require("./handlers/itemHandler");
+const { handleItems, handleInventory } = require("./handlers/itemHandler");
 const PORT = 4000;
 
 express()
@@ -27,4 +27,5 @@ express()
   // REST endpoints?
   .get("/bacon", (req, res) => res.status(200).json("🥓"))
   .get("/products/all", handleItems)
+  .patch("/products/update", handleInventory)
   .listen(PORT, () => console.info(`Listening on port ${PORT}`));
