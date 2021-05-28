@@ -4,6 +4,8 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const morgan = require("morgan");
 
+const {updateCart} = require("./handlers/putHandler");
+
 const PORT = 4000;
 
 express()
@@ -26,5 +28,10 @@ express()
 
   // REST endpoints?
   .get("/bacon", (req, res) => res.status(200).json("🥓"))
+
+
+
+
+  .put("/cart", updateCart)
 
   .listen(PORT, () => console.info(`Listening on port ${PORT}`));
