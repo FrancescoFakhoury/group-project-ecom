@@ -26,6 +26,7 @@ const Homepage = ({
     newList.push(item);
     setCartItems(newList);
     localStorage.setItem("cartItems", JSON.stringify(cartItems));
+    console.log("hello");
   };
 
   useEffect(() => {
@@ -41,15 +42,20 @@ const Homepage = ({
     <Wrapper>
       <Title>Items for Sale</Title>
       <ProductWrap>
-        {items.map((item) => {
+        {items.map((item, index) => {
           return (
-            <ProductWrap2>
+            <ProductWrap2 key={index}>
               <img src={item.imageSrc} />
               <ItemName>{item.name}</ItemName>
               <ItemPrice>{item.price}</ItemPrice>
               {item.numInStock > 0 ? (
-                <StyledButton onClick={() => {
-                  handleClick(item)}}>Add to Cart</StyledButton>
+                <StyledButton
+                  onClick={() => {
+                    handleClick(item);
+                  }}
+                >
+                  Add to Cart
+                </StyledButton>
               ) : (
                 <StyledButton disabled>Add to Cart</StyledButton>
               )}
