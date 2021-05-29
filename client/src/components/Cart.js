@@ -6,6 +6,7 @@ const Cart = ({ cartItems }) => {
   //if cartArray length is smaller than 1 say "looks like your carts empty"
   //
   //yalready know wtf goin on over here
+
   return (
     <Wrapper>
       {cartItems.length > 0 ? (
@@ -20,7 +21,7 @@ const Cart = ({ cartItems }) => {
           })}
           {cartItems.forEach((cartItem) => {
             let alteredValue = cartItem.price.replace("$", "");
-            total += Number(alteredValue) * 1.15;
+            total += Number(alteredValue * 0.15 + Number(alteredValue));
             taxes = Number(alteredValue * 1.15 - alteredValue);
           })}
           <div>Taxes: {taxes.toFixed(2)}</div>
