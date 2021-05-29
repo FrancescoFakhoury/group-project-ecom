@@ -22,7 +22,7 @@ const Cart = ({ cartItems }) => {
           {cartItems.forEach((cartItem) => {
             let alteredValue = cartItem.price.replace("$", "");
             total += Number(alteredValue * 0.15 + Number(alteredValue));
-            taxes = Number(alteredValue * 1.15 - alteredValue);
+            taxes = total * 1.15 - total;
           })}
           <div>Taxes: {taxes.toFixed(2)}</div>
           <div>Total: {total.toFixed(2)}</div>
