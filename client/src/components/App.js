@@ -14,6 +14,7 @@ function App() {
   //could check local storage for cartItems on render!
   //this includes setting intial value of cart items state with local storage.get, nested in a ternary
   const [items, setItems] = useState([]);
+
   return (
     <BrowserRouter>
       <GlobalStyles />

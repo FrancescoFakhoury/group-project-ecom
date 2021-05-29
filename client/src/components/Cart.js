@@ -1,21 +1,36 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-let total = 0;
-let taxes = 0;
+
+let array = [];
+
 const Cart = ({ cartItems, setCartItems }) => {
+  let [total] = useState(0);
+
   const handleClick = (e) => {
     const newCartItems = [...cartItems];
     const index = newCartItems.indexOf(e.target.value);
     newCartItems.splice(index, 1);
     setCartItems(newCartItems);
   };
-  cartItems.forEach((cartItem) => {
-    let alteredValue = cartItem.price.replace("$", "");
-    let numValue = Number(alteredValue);
-    // total = numValue * 0.15 + numValue;
-    taxes += numValue * 0.15;
-    total = numValue * 1.15;
-  });
+
+  const clickSubmit = (cartItem) => {
+    const data = {
+      _id: array,
+    };
+    fetch("/products/update", {
+      method: "PATCH",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(data),
+    }).then((response) =>
+      response.json().then((json) => {
+        setCartItems([]);
+        console.log(json);
+      })
+    );
+  };
+
   //if cartArray length is smaller than 1 say "looks like your carts empty"
   //
   //yalready know wtf goin on over here
@@ -24,6 +39,11 @@ const Cart = ({ cartItems, setCartItems }) => {
       {cartItems.length > 0 ? (
         <CartWrap>
           {cartItems.map((cartItem) => {
+            array.push(cartItem._id);
+            // setTotal(total + Number(cartItem.price.replace("$", "")));
+            // console.log(Number(cartItem.price.replace("$", "")));
+            // console.log(total);
+            total += Number(cartItem.price.replace("$", ""));
             return (
               <InfoWrap>
                 <div>{cartItem.name}</div>
@@ -33,9 +53,11 @@ const Cart = ({ cartItems, setCartItems }) => {
             );
           })}
 
-          <div>Taxes: {taxes.toFixed(2)}</div>
+          {/* <div>Taxes: {taxes.toFixed(2)}</div> */}
           <div>Total: {total.toFixed(2)}</div>
-          <StyledBtn>Purchase Items</StyledBtn>
+          <StyledBtn type="submit" onClick={() => clickSubmit()}>
+            Purchase Items
+          </StyledBtn>
         </CartWrap>
       ) : (
         <EmptyWrap>Looks like your cart is empty!</EmptyWrap>
