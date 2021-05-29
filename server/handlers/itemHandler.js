@@ -8,19 +8,16 @@ const handleItems = (req, res) => {
 
 //updating inventory when making a purchase
 const handleInventory = (req, res) => {
+  //the try part basically just try's something, if it fails it goes to the catch on line 29.
   try {
+    //when you do this console.log, it will be _id: [id's of the items in the cart] because thats what is the body on line 29 of Cart.js which we are setting as the array.
     console.log(req.body);
     const { _id } = req.body;
+    //this console.log is just destructing the req.body
     console.log(_id);
-    // const foundItemArray = [];
-    // const foundItem = items.find((item) => {
-    // console.log(_id);
-    //   if (item._id === parseInt(_id)) {
-    //     foundItemArray.push(item);
-    //   }
-    // });
-    // console.log(foundItemArray[0]);
-
+    //so we go through the array with the item id's and use a forEach on it, where item as the callback is just obviously a singular item in the array,
+    //and we say if e._id from items.find === item (the parseInt basically turns item into an actual number (interger) and not a string)
+    //then do e.numInstock -- (-1 everytime)
     _id.forEach((item) => {
       items.find((e) => {
         if (e._id === parseInt(item)) {
@@ -33,13 +30,6 @@ const handleInventory = (req, res) => {
     return res
       .status(200)
       .json({ status: 200, message: "success :), purchased" });
-    // if ((foundItem[0].numInStock = numInStock)) {
-    //   //handleClick will be req.body numInstock & _id values
-    //   //update the numInStock with handleClick
-    //   res.status(200).json({ status: 200, data: foundItem[0] });
-    // } else {
-    //   res.status(404).json({ status: 404, message: "item not found"[0] });
-    // }
   } catch (error) {
     res.status(500).json({ status: 500, message: "you have failed :'(" });
   }

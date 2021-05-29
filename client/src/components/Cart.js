@@ -4,6 +4,8 @@ import styled from "styled-components";
 let array = [];
 
 const Cart = ({ cartItems, setCartItems }) => {
+  //state was not working when we used it in either a forEach or a map and we didnt know why but basically, even a simple console.log was making the React component render
+  //like more than a hundred times, so we just had to use BandAid code and just set the state to be 0 but not use setTotal
   let [total] = useState(0);
 
   const handleClick = (e) => {
@@ -14,6 +16,8 @@ const Cart = ({ cartItems, setCartItems }) => {
   };
 
   const clickSubmit = (cartItem) => {
+    //the syntax for body had to be like JSON.stringify(data) so we had to create an object data with what were sending in, and because we couldnt use cartItems._id OUTSIDE of the map in render
+    //we had to create an array and like throw the id of the item inside on like 48
     const data = {
       _id: array,
     };
@@ -25,7 +29,9 @@ const Cart = ({ cartItems, setCartItems }) => {
       body: JSON.stringify(data),
     }).then((response) =>
       response.json().then((json) => {
+        //resetting the state of cartItems to be empty once purchased.
         setCartItems([]);
+        //we dont need to grab anything from json in this situation, but we are console logging it to see if it works.
         console.log(json);
       })
     );
@@ -41,10 +47,9 @@ const Cart = ({ cartItems, setCartItems }) => {
           <Title>Your Cart</Title>
           <CartWrap>
             {cartItems.map((cartItem) => {
+              //pushing the item into an array we created at the top of the component
               array.push(cartItem._id);
-              // setTotal(total + Number(cartItem.price.replace("$", "")));
-              // console.log(Number(cartItem.price.replace("$", "")));
-              // console.log(total);
+              //formula for calculating the total, we didnt do taxes.
               total += Number(cartItem.price.replace("$", ""));
               return (
                 <InfoWrap>
