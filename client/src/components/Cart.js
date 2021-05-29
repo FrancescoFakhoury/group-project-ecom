@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import styled from "styled-components";
+let total = 0;
+let taxes = 0;
 const Cart = ({ cartItems }) => {
   //if cartArray length is smaller than 1 say "looks like your carts empty"
   //
@@ -16,6 +18,13 @@ const Cart = ({ cartItems }) => {
               </InfoWrap>
             );
           })}
+          {cartItems.forEach((cartItem) => {
+            let alteredValue = cartItem.price.replace("$", "");
+            total += Number(alteredValue) * 1.15;
+            taxes = Number(alteredValue * 1.15 - alteredValue);
+          })}
+          <div>Taxes: {taxes.toFixed(2)}</div>
+          <div>Total: {total.toFixed(2)}</div>
           <StyledBtn>Purchase Items</StyledBtn>
         </CartWrap>
       ) : (
