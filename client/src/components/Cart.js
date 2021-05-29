@@ -38,29 +38,30 @@ const Cart = ({ cartItems, setCartItems }) => {
     <Wrapper>
       {cartItems.length > 0 ? (
         <>
-       <Title>Your Cart</Title>
-        <CartWrap>
-          {cartItems.map((cartItem) => {
-            array.push(cartItem._id);
-            // setTotal(total + Number(cartItem.price.replace("$", "")));
-            // console.log(Number(cartItem.price.replace("$", "")));
-            // console.log(total);
-            total += Number(cartItem.price.replace("$", ""));
-            return (
-              <InfoWrap>
-                <ItemName>{cartItem.name}</ItemName>
-                <ItemPrice>{cartItem.price}</ItemPrice>
-                <StyledBtn onClick={handleClick}>Remove</StyledBtn>
-              </InfoWrap>
-            );
-          })}
-          <Amount>
-          <Numbers>Total: {total.toFixed(2)}</Numbers>
-          </Amount>
-          <BigStyledBtn type="submit" onClick={() => clickSubmit()}>
-            Purchase Items
-          </BigStyledBtn>
-        </CartWrap>
+          <Title>Your Cart</Title>
+          <CartWrap>
+            {cartItems.map((cartItem) => {
+              array.push(cartItem._id);
+              // setTotal(total + Number(cartItem.price.replace("$", "")));
+              // console.log(Number(cartItem.price.replace("$", "")));
+              // console.log(total);
+              total += Number(cartItem.price.replace("$", ""));
+              return (
+                <InfoWrap>
+                  <img src={cartItem.imageSrc} />
+                  <ItemName>{cartItem.name}</ItemName>
+                  <ItemPrice>{cartItem.price}</ItemPrice>
+                  <StyledBtn onClick={handleClick}>Remove</StyledBtn>
+                </InfoWrap>
+              );
+            })}
+            <Amount>
+              <Numbers>Total: {total.toFixed(2)}</Numbers>
+            </Amount>
+            <BigStyledBtn type="submit" onClick={() => clickSubmit()}>
+              Purchase Items
+            </BigStyledBtn>
+          </CartWrap>
         </>
       ) : (
         <EmptyWrap>Looks like your cart is empty!</EmptyWrap>
