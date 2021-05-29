@@ -22,21 +22,26 @@ const Cart = ({ cartItems, setCartItems }) => {
   return (
     <Wrapper>
       {cartItems.length > 0 ? (
-        <CartWrap>
-          {cartItems.map((cartItem) => {
-            return (
-              <InfoWrap>
-                <div>{cartItem.name}</div>
-                <div>{cartItem.price}</div>
-                <button onClick={handleClick}>Remove</button>
-              </InfoWrap>
-            );
-          })}
-
-          <div>Taxes: {taxes.toFixed(2)}</div>
-          <div>Total: {total.toFixed(2)}</div>
-          <StyledBtn>Purchase Items</StyledBtn>
-        </CartWrap>
+        <>
+          <Title>Your Cart</Title>
+          <CartWrap>
+            {cartItems.map((cartItem) => {
+              return (
+                <InfoWrap>
+                  <img src={cartItem.imageSrc} />
+                  <ItemName>{cartItem.name}</ItemName>
+                  <ItemPrice>{cartItem.price}</ItemPrice>
+                  <StyledBtn onClick={handleClick}>Remove</StyledBtn>
+                </InfoWrap>
+              );
+            })}
+            <Amount>
+              <Numbers>Taxes: {taxes.toFixed(2)}</Numbers>
+              <Numbers>Total: {total.toFixed(2)}</Numbers>
+            </Amount>
+            <BigStyledBtn>Purchase Items</BigStyledBtn>
+          </CartWrap>
+        </>
       ) : (
         <EmptyWrap>Looks like your cart is empty!</EmptyWrap>
       )}
@@ -44,13 +49,45 @@ const Cart = ({ cartItems, setCartItems }) => {
   );
 };
 
+const Title = styled.h1`
+  font-size: 40px;
+  font-family: var(--font-family);
+  display: flex;
+  justify-content: center;
+  color: black;
+  opacity: 0.6;
+`;
+
+const ItemName = styled.p`
+  font-size: 20px;
+  font-family: var(--font-family);
+`;
+
+const ItemPrice = styled.p`
+  font-weight: bold;
+  font-size: 20px;
+  font-family: var(--font-family);
+`;
+
+const Numbers = styled.p`
+  font-size: 20px;
+  font-family: var(--font-family);
+  font-weight: bold;
+`;
+
+const Amount = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`;
+
 const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-self: center;
   margin: 0 auto;
-  margin: 20vh auto;
+  margin: 10vh auto;
   font-family: var(--font-family);
 `;
 const StyledBtn = styled.button`
@@ -66,13 +103,44 @@ const StyledBtn = styled.button`
   background-image: linear-gradient(to right, turquoise, purple);
   border-radius: 4px;
   box-shadow: 10px 10px 10px -10px;
-`;
+  font-family: var(--font-family);
 
+  &:hover {
+    cursor: pointer;
+  }
+`;
+const BigStyledBtn = styled.button`
+  /* margin-left: 40%;
+  margin-bottom: 20px; */
+  font-size: 48px;
+  /* margin: 20px 0 20px 40%; */
+  padding: 20 30px;
+  margin: 40px;
+  border-style: none;
+  align-self: center;
+  color: #ffff;
+  background-image: linear-gradient(to right, turquoise, purple);
+  border-radius: 4px;
+  box-shadow: 10px 10px 10px -10px;
+  font-family: var(--font-family);
+
+  &:hover {
+    cursor: pointer;
+  }
+`;
 const InfoWrap = styled.div`
   padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 20px 20px 20px -20px;
+  border: solid grey 1px;
+  margin: 30px;
 `;
 
 const CartWrap = styled.div`
+  padding: 100px;
   display: flex;
   flex-direction: column;
   justify-content: center;
