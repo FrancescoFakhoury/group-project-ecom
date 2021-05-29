@@ -2,7 +2,13 @@ import React, { useState } from "react";
 import styled from "styled-components";
 let total = 0;
 let taxes = 0;
-const Cart = ({ cartItems }) => {
+const Cart = ({ cartItems, setCartItems }) => {
+  const handleClick = (e) => {
+    const newCartItems = [...cartItems];
+    const index = newCartItems.indexOf(e.target.value);
+    newCartItems.splice(index, 1);
+    setCartItems(newCartItems);
+  };
   cartItems.forEach((cartItem) => {
     let alteredValue = cartItem.price.replace("$", "");
     let numValue = Number(alteredValue);
@@ -22,6 +28,7 @@ const Cart = ({ cartItems }) => {
               <InfoWrap>
                 <div>{cartItem.name}</div>
                 <div>{cartItem.price}</div>
+                <button onClick={handleClick}>Remove</button>
               </InfoWrap>
             );
           })}
