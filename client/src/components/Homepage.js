@@ -48,6 +48,9 @@ const Homepage = ({
               <img src={item.imageSrc} />
               <ItemName>{item.name}</ItemName>
               <ItemPrice>{item.price}</ItemPrice>
+              <ItemStock>
+                Number of items left in stock: {item.numInStock}
+              </ItemStock>
               {item.numInStock > 0 ? (
                 <StyledButton
                   onClick={() => {
@@ -57,7 +60,9 @@ const Homepage = ({
                   Add to Cart
                 </StyledButton>
               ) : (
-                <StyledButton disabled>Add to Cart</StyledButton>
+                <StyledDisabledButton disabled>
+                  Add to Cart
+                </StyledDisabledButton>
               )}
             </ProductWrap2>
           );
@@ -74,7 +79,11 @@ const Wrapper = styled.div`
   justify-content: center;
   flex-direction: column;
 `;
-
+const ItemStock = styled.p`
+  font-size: 20px;
+  font-weight: bold;
+  font-family: var(--font-family);
+`;
 const Title = styled.p`
   color: black;
   opacity: 0.6;
@@ -114,6 +123,15 @@ const StyledButton = styled.button`
   &:hover {
     cursor: pointer;
   }
+`;
+
+const StyledDisabledButton = styled.button`
+  font-size: 20px;
+  padding: 10px;
+  border-radius: 4px;
+  border: solid 1px;
+  background-color: grey;
+  color: #fff;
 `;
 
 const ProductWrap2 = styled.div`

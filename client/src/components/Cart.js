@@ -8,9 +8,9 @@ const Cart = ({ cartItems, setCartItems }) => {
   //like more than a hundred times, so we just had to use BandAid code and just set the state to be 0 but not use setTotal
   let [total] = useState(0);
 
-  const handleClick = (e) => {
+  const handleClick = (cartItem) => {
     const newCartItems = [...cartItems];
-    const index = newCartItems.indexOf(e.target.value);
+    const index = newCartItems.indexOf(cartItem);
     newCartItems.splice(index, 1);
     setCartItems(newCartItems);
   };
@@ -56,7 +56,7 @@ const Cart = ({ cartItems, setCartItems }) => {
                   <img src={cartItem.imageSrc} />
                   <ItemName>{cartItem.name}</ItemName>
                   <ItemPrice>{cartItem.price}</ItemPrice>
-                  <StyledBtn onClick={handleClick}>Remove</StyledBtn>
+                  <StyledBtn onClick={() => handleClick(cartItem)}>Remove</StyledBtn>
                 </InfoWrap>
               );
             })}
